@@ -9,7 +9,7 @@ package Model;
  *
  * @author tomisinoladele
  */
-public class Person {
+public abstract class Person {
      private int Id;
      private String fullname;
      private String address;
@@ -57,6 +57,6 @@ public class Person {
      public String toString(){
          return (fullname +" "+address+" "+phone+ " "+Id);
       
-         
      }
+    
 }

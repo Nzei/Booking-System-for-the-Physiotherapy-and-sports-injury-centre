@@ -18,14 +18,12 @@ public class Physician extends Person {
     private int consulation_hours; 
     
     public Physician(int Id, String fullname, String address, String phone,int chours){
+        
          super(Id,fullname,address,phone);
          consulation_hours = chours;
          expertise = new ArrayList<>();
     }
-     public String toString(){
-         return (super.getFullname() +" "+super.getAddress()+" "+super.getPhone()+ " "+super.getId());
-     }
-
+    
     public String getExpertise() {
         String e = "";
         
@@ -47,5 +45,9 @@ public class Physician extends Person {
     public void setConsulation_hours(int consulation_hours) {
         this.consulation_hours = consulation_hours;
     }
-     
+    
+     public String toString(){
+         return (super.getFullname() +" "+super.getAddress()+" "
+                 +super.getPhone()+ " "+super.getId()+" "+consulation_hours+" "+expertise);
+     }
 }

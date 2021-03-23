@@ -16,7 +16,6 @@ public class Patient extends Person {
     }
     public String toString(){
          return (super.getFullname() +" "+super.getAddress()+" "+super.getPhone()+ " "+super.getId());
-     }
+    }
     
-   
 }
