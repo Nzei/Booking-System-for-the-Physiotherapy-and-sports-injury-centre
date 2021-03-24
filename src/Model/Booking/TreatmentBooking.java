@@ -5,6 +5,8 @@
  */
 package Model.Booking;
 
+import Model.Physician;
+
 /**
  *
  * @author tomisinoladele
@@ -13,8 +15,8 @@ public class TreatmentBooking extends AppointmentBooking {
     
     private String treatmentType;
     
-    public TreatmentBooking(Room room,String name,attended attended,String treatmentType){
-        super(room,name,attended);
+    public TreatmentBooking(Room room,String name,String treatmentType,String date,Physician physician){
+        super(room,name,date,physician);
         this.treatmentType = treatmentType;
     }
     

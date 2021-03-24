@@ -5,19 +5,20 @@
  */
 package Model.Booking;
 
+import Model.Physician;
+
 /**
  *
  * @author tomisinoladele
  */
-public class ConsulationBooking extends AppointmentBooking{
+public class ConsultationBooking extends AppointmentBooking{
     
     private String visitorName;
     private String note;
 
-    public ConsulationBooking(Room room,String name,attended attended,String vistorName,String note){
-        super(room,name,attended);
+    public ConsultationBooking(Room room,String name,String vistorName, String date,Physician physician){
+        super(room,name,date,physician);
         this.visitorName = visitorName;
-        this.note = note;
     }
     public String getVisitorName() {
         return visitorName;
@@ -27,13 +28,10 @@ public class ConsulationBooking extends AppointmentBooking{
         this.visitorName = visitorName;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
+   
     
+    public String toString(){
+        return (super.getRoom()+" "+super.getName()+" "+super.attended+" "+visitorName);
+    }
     
 }

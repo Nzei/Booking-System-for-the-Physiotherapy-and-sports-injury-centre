@@ -7,6 +7,7 @@ package Model.Booking;
 
 import Model.Physician;
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  *
  * @author tomisinoladele
@@ -18,16 +19,36 @@ public class AppointmentBooking {
     //private final attended attended;
     attended attended;
     private String name;
-    private ArrayList <Physician> physician;
-    
-    public AppointmentBooking(Room room,String name,attended attended){
+    private Physician physician;
+    private String date;
+   
+
+    public AppointmentBooking(Room room,String name,String date){
         this.room = room;
         this.name = name;
         this.attended = attended;
-        physician = new ArrayList<>();
+        this.date = date;
+        this.physician = physician;
         
     }
 
+    public attended getAttended() {
+        return attended;
+    }
+
+    public void setAttended(attended attended) {
+        this.attended = attended;
+    }
+    
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
     public Room getRoom() {
         return room;
     }
@@ -44,13 +65,27 @@ public class AppointmentBooking {
         this.name = name;
     }
 
-    public ArrayList<Physician> getPhysician() {
+    public Physician getPhysician() {
         
         return physician;
     }
 
-    public void setPhysician(ArrayList<Physician> physician) {
-        this.physician = physician;
+    public void setPhysician(Physician p) {
+       this.physician = p;
+    }
+    
+//    public String getAppointmentByExpertise(String query){
+//    String s = "";
+//    
+//     for(Physician physicia : physician){
+//         if(physicia.getExpertise().equalsIgnoreCase(query)){
+//             s = s + this.toString();
+//         }
+//     }
+//        return s;
+//    }
+    public String toString(){
+        return (room+" "+name+" "+attended+" "+physician+" "+date);        
     }
     
 }
