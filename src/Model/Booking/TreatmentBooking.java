@@ -11,13 +11,18 @@ import Model.Physician;
  *
  * @author tomisinoladele
  */
+
 public class TreatmentBooking extends AppointmentBooking {
     
     private String treatmentType;
-    
+     
+     
     public TreatmentBooking(Room room,String name,String treatmentType,String date,Physician physician){
         super(room,name,date,physician);
         this.treatmentType = treatmentType;
+        
+        
+        
     }
     
     public String getTreatmentType() {
@@ -28,9 +33,11 @@ public class TreatmentBooking extends AppointmentBooking {
         this.treatmentType = treatmentType;
     }
     
+    
     public String toString(){
-        return (super.getPhysician()+" "+super.getName()+" "+super.attended
-                +" "+treatmentType);
+        return (super.getPhysician()+" "+super.getName()+" "+super.getAttended()
+          +" "+treatmentType +super.getRoom()+super.getStatus()+""+super.getDate()+"\n");
     }
+    
     
 }

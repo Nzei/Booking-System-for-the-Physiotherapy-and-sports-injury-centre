@@ -17,13 +17,15 @@ public class Physician extends Person {
     private ArrayList<String> expertise ;
     private int consulation_hours; 
     
+    
     public Physician(int Id, String fullname, String address, String phone,int chours){
         
          super(Id,fullname,address,phone);
          consulation_hours = chours;
          expertise = new ArrayList<>();
     }
-    
+
+   
     public String getExpertise() {
         String e = "";
         

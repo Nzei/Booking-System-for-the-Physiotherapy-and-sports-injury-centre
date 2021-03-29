@@ -12,26 +12,37 @@ import java.util.HashMap;
  *
  * @author tomisinoladele
  */
- enum  attended {yes,no};
+ 
 public class AppointmentBooking {
     
+    enum  attended {yes,no};
     private Room room;
     //private final attended attended;
-    attended attended;
+    attended attended; //changes to status booked,attended,changed 
+    
     private String name;
     private Physician physician;
     private String date;
-   
+    Status status;
 
-    public AppointmentBooking(Room room,String name,String date){
+    public AppointmentBooking(Room room,String name,String date,Physician physician){
         this.room = room;
         this.name = name;
-        this.attended = attended;
+        this.attended = attended.no;
         this.date = date;
         this.physician = physician;
+        status = status.CHANGED;
         
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+  
     public attended getAttended() {
         return attended;
     }
@@ -87,5 +98,7 @@ public class AppointmentBooking {
     public String toString(){
         return (room+" "+name+" "+attended+" "+physician+" "+date);        
     }
+
+    
     
 }
