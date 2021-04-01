@@ -8,8 +8,12 @@ package Controller;
 import Model.Booking.AppointmentBooking;
 import Model.Booking.Booking;
 import Model.Booking.Status;
+import Model.Patient;
 import Model.Physician;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -18,33 +22,40 @@ import java.util.Objects;
  */
 public class BookingController {
     
-     private HashMap<Integer,AppointmentBooking> bookingappointments; 
+     private HashMap<Integer,AppointmentBooking> treatmentappointments; 
+     private HashMap<String,ArrayList<Patient>> patientbookings;
+     private ArrayList<Patient> patients;
+      
+               
      Booking bookings = new Booking();
      
      public BookingController(){
-         bookingappointments = bookings.getBookingappointments();
+        treatmentappointments = bookings.getTreatmentBookingAppointments();
+        patients = new ArrayList<>();
      
      }
      
      public String getPhysicianByExpertise(String query){
          
          String s = "";
-          for(Integer p : bookingappointments.keySet())
+          for(Integer p : treatmentappointments.keySet())
            {
-              if(bookingappointments.get(p).getPhysician()
+              if(treatmentappointments.get(p).getPhysician()
                  .getExpertise().equalsIgnoreCase(query))
                {
-                 s = s + p + bookingappointments.get(p);
+                 s = s + p + treatmentappointments.get(p);
+               }else
+               {
+                  s = "no available physician with expertise";
                }
-                s = "no available physician with expertise";
             }
          return s;
-     }
+       }
      
      public String getPhysicianByName(String query){
       String s = "";
       
-       for(AppointmentBooking booking : bookingappointments.values())
+       for(AppointmentBooking booking : treatmentappointments.values())
        {
          
            if(booking.getPhysician().getFullname().equalsIgnoreCase(query))
@@ -57,17 +68,31 @@ public class BookingController {
       return s;
      }
     
-     public String bookAppointment(Integer position)
+     public String bookTreatmentAppointment(Integer position)
      {
          String s = "";
-         for(Integer booking : bookingappointments.keySet())
+         //Iterator<HashMap.Entry<Integer, String>> iterator = treatmentappointments.entrySet().iterator();
+         //Iterator<Map.Entry<Integer, AppointmentBooking>> iterator = treatmentappointments.entrySet().iterator();
+         for(Integer booking : treatmentappointments.keySet())
         {
+            AppointmentBooking b = treatmentappointments.get(booking);
+            Patient p = new Patient(1,"test patient","ajah","0903");
+            
             if(Objects.equals(booking, position)){
-                
-              AppointmentBooking b = bookingappointments.get(booking);
+                patients.add(p);
+              //AppointmentBooking b = treatmentappointments.get(booking);
               b.setStatus(Status.BOOKED);
-                
-                System.out.println(bookingappointments.get(booking).toString());
+//              for(Patient pa : patients)
+//               {
+//                    if(!patientbookings.containsKey(p.getFullname())){
+//                       patientbookings.put(pa.getFullname(), new ArrayList<>());
+//                       
+//                    }
+//                      patientbookings.get(p.getFullname()).add(pa);
+//               
+//                }
+               
+              System.out.println(b.toString());
                
                 
             }

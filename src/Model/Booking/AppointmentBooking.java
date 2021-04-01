@@ -15,10 +15,10 @@ import java.util.HashMap;
  
 public class AppointmentBooking {
     
-    enum  attended {yes,no};
+    //enum  attended {yes,no};
     private Room room;
     //private final attended attended;
-    attended attended; //changes to status booked,attended,changed 
+   // attended attended; //changes to status booked,attended,changed 
     
     private String name;
     private Physician physician;
@@ -28,10 +28,10 @@ public class AppointmentBooking {
     public AppointmentBooking(Room room,String name,String date,Physician physician){
         this.room = room;
         this.name = name;
-        this.attended = attended.no;
+       // this.attended = attended.no;
         this.date = date;
         this.physician = physician;
-        status = status.CHANGED;
+        status = status;
         
     }
 
@@ -43,13 +43,6 @@ public class AppointmentBooking {
         this.status = status;
     }
   
-    public attended getAttended() {
-        return attended;
-    }
-
-    public void setAttended(attended attended) {
-        this.attended = attended;
-    }
     
 
     public String getDate() {
@@ -96,7 +89,7 @@ public class AppointmentBooking {
 //        return s;
 //    }
     public String toString(){
-        return (room+" "+name+" "+attended+" "+physician+" "+date);        
+        return (room+" "+name+" "+physician+" "+date);        
     }
 
     

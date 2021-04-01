@@ -35,7 +35,7 @@ public class TreatmentBooking extends AppointmentBooking {
     
     
     public String toString(){
-        return (super.getPhysician()+" "+super.getName()+" "+super.getAttended()
+        return (super.getPhysician()+" "+super.getName()+" "+super.getStatus()
           +" "+treatmentType +super.getRoom()+super.getStatus()+""+super.getDate()+"\n");
     }
     
