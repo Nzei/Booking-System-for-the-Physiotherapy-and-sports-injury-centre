@@ -21,8 +21,6 @@ public class TreatmentBooking extends AppointmentBooking {
         super(room,name,date,physician);
         this.treatmentType = treatmentType;
         
-        
-        
     }
     
     public String getTreatmentType() {

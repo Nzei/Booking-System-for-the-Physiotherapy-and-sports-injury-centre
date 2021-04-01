@@ -6,14 +6,15 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author tomisinoladele
  */
 public class PersonDb {
-     private  ArrayList<Patient> patients;
-     private  ArrayList<Physician> physicians;
+     private  List<Patient> patients;
+     private  List<Physician> physicians;
      
      public PersonDb(){
           patients = new ArrayList<>();
@@ -55,10 +56,10 @@ public class PersonDb {
         
     }
     
-    public ArrayList<Patient> getPatients() {
+    public List<Patient> getPatients() {
        return patients;
    } 
-    public ArrayList<Physician> getPhysicians(){
+    public List<Physician> getPhysicians(){
         return physicians;
     }
     public String toString(){

@@ -9,6 +9,7 @@ package Model.Booking;
 
 import Model.Physician;
 import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -17,7 +18,7 @@ import java.util.HashMap;
  */
 public class Booking {
     
-          private HashMap<Integer,AppointmentBooking> treatmentappointments;    
+          private Map<Integer,AppointmentBooking> treatmentappointments;
          //Room room,String name,String treatmentType,String date
          // String suite, String roomType
           public Booking(){
@@ -37,7 +38,7 @@ public class Booking {
           //CREATING DATES
           Date date1 = new Date(03,06,2021);
           Date date2 = new Date(05,06,2021);
-          Date date3 = new Date(07,06,21);
+          Date date3 = new Date(07,06,2021);
           Date date4 = new Date(10,06,2021);
           Date date5 = new Date(12,06,2021); 
           
@@ -45,17 +46,17 @@ public class Booking {
           Physician physician =  new Physician(1,"tomi test","ajah",
                                  "08023120121",2);
           
-          physician.setExpertise("Doctor");
+          physician.addExpertise("Doctor");
           
           Physician physician2 = new Physician(2,"kola","lekki",
                                  "08023120120",2);
           
-          physician2.setExpertise("Doctor");
+          physician2.addExpertise("Doctor");
           
           Physician physician3 = new Physician(3,"lola","hatfield"
                                 ,"08023120129",2);
           
-           physician3.setExpertise("Doctor");
+           physician3.addExpertise("Doctor");
           
           AppointmentBooking appointmentBooking = new TreatmentBooking(room1,
                                        "cadio","back pain",date1.getAsString(),
@@ -83,7 +84,7 @@ public class Booking {
           
         }
           
-        public HashMap<Integer, AppointmentBooking> getTreatmentBookingAppointments() {
+        public Map<Integer, AppointmentBooking> getTreatmentBookingAppointments() {
              return treatmentappointments;
          }
 }

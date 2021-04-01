@@ -6,6 +6,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class Physician extends Person {
     
    // private String expertise; 
-    private ArrayList<String> expertise ;
+    private List<String> expertise ;
     private int consulation_hours; 
     
     
@@ -26,17 +27,11 @@ public class Physician extends Person {
     }
 
    
-    public String getExpertise() {
-        String e = "";
-        
-        for(String expert : expertise){
-            e = e + expert;
-        }
-        return e;   
+    public List<String> getExpertise() {
+       return expertise;
     }
 
-    public void setExpertise(String expertisee) {
-       // this.expertise = expertise;
+    public void addExpertise(String expertisee) {
        expertise.add(expertisee);
     }
 

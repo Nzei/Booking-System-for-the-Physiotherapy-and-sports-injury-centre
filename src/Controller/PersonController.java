@@ -9,14 +9,15 @@ import Model.Patient;
 import Model.PersonDb;
 import Model.Physician;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author tomisinoladele
  */
 public class PersonController {
-         ArrayList <Patient> patients;
-         ArrayList <Physician> physicians;
+         List <Patient> patients;
+         List<Physician> physicians;
           PersonDb pb = new PersonDb();
         
         public PersonController(){

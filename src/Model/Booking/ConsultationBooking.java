@@ -28,10 +28,10 @@ public class ConsultationBooking extends AppointmentBooking{
         this.visitorName = visitorName;
     }
 
-   
-    
-    public String toString(){
-        return (super.getRoom()+" "+super.getName()+" "+super.attended+" "+visitorName);
-    }
+
+
+//    public String toString(){
+//        return (super.getRoom()+" "+super.getName()+" "+super.attended+" "+visitorName);
+//    }
     
 }

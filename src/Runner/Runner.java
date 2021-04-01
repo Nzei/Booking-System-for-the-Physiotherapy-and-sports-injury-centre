@@ -5,12 +5,16 @@
  */
 package Runner;
 
-import Controller.BookingController;
 import Controller.PersonController;
+import Model.Booking.AppointmentBooking;
 import Model.Booking.Booking;
 import Model.Patient;
 import Model.PersonDb;
 import Model.Physician;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -22,13 +26,31 @@ public class Runner {
         
         Booking bookings = new Booking();
         PersonDb pb = new PersonDb();
+        Physician physician = null;
         bookings.addData();
         pb.addData();
         
        
          PersonController pc = new PersonController();
-         BookingController bc = new BookingController();
-        System.out.println(bc.bookAppointment(3));
+        List<Patient> patientsList= pb.getPatients();
+
+        Map<Integer, AppointmentBooking> appointmentBookings = bookings.getTreatmentBookingAppointments();
+        patientsList.get(0).setTreatmentAppointments(appointmentBookings);
+        patientsList.get(0).getPhysicianByName("kola");
+        patientsList.get(0).bookAppointment();
+        System.out.println(patientsList.get(0).getAppointmentBooking().getStatus());
+
+        patientsList.get(1).setTreatmentAppointments(appointmentBookings);
+        patientsList.get(1).getPhysicianByName("taiye");
+        patientsList.get(1).bookAppointment();
+        System.out.println(patientsList.get(1).getAppointmentBooking().getStatus());
+
+
+
+//        System.out.println(bc.bookAppointment(3));
         //System.out.println(bc.getPhysicianByName("tomi test"));
+
+
     }
+
 }
