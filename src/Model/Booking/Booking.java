@@ -17,11 +17,11 @@ import java.util.HashMap;
  */
 public class Booking {
     
-          private HashMap<Integer,AppointmentBooking> bookingappointments;    
+          private HashMap<Integer,AppointmentBooking> treatmentappointments;    
          //Room room,String name,String treatmentType,String date
          // String suite, String roomType
           public Booking(){
-            bookingappointments = new HashMap<>();
+           treatmentappointments = new HashMap<>();
             this.addData();
           }
 
@@ -75,15 +75,15 @@ public class Booking {
                                        "chero","leg",date2.getAsString(),
                                         physician2);
            
-          bookingappointments.put(1, appointmentBooking);
-          bookingappointments.put(2, appointmentBooking2);
-          bookingappointments.put(3, appointmentBooking3);
-          bookingappointments.put(4, appointmentBooking4);
+          treatmentappointments.put(1, appointmentBooking);
+          treatmentappointments.put(2, appointmentBooking2);
+          treatmentappointments.put(3, appointmentBooking3);
+          treatmentappointments.put(4, appointmentBooking4);
           
           
         }
           
-        public HashMap<Integer, AppointmentBooking> getBookingappointments() {
-             return bookingappointments;
+        public HashMap<Integer, AppointmentBooking> getTreatmentBookingAppointments() {
+             return treatmentappointments;
          }
 }
